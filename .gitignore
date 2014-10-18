@@ -213,3 +213,10 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#Etond
+
+proj.android/
+proj.win32/
+proj.wp8-xaml/
+proj.linux/
