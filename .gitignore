@@ -216,7 +216,6 @@ pip-log.txt
 
 #Etond
 
-proj.android/
 proj.win32/
 proj.wp8-xaml/
 proj.linux/
