@@ -8,12 +8,14 @@
 
 #include "ETController.h"
 
-ETController::ETController(std::string szButtonPath, std::string szBgPath)
+ETController::ETController(std::string szButtonPath, std::string szBgPath, ETCtrlInterface  *pCallbacks)
     : m_pCtrlBg(nullptr)
     , m_pCtrlButton(nullptr)
     , m_szBgPath(szBgPath)
     , m_szButtonPath(szButtonPath)
     , m_status(ETCtrlStatus::CTRLWAIT)
+    , m_dir(ETCtrlDir::CENTER)
+    , m_pCallbacks(pCallbacks)
 {
     setRadius(10 * FIXWIDTH);
     setAnchorPoint(Point(0, 0));
@@ -32,9 +34,10 @@ bool ETController::init()
     return true;
 }
 
-ETController* ETController::create(std::string szButtonPath, std::string szBgPath)
+ETController* ETController::create(std::string szButtonPath, std::string szBgPath,
+                                   ETCtrlInterface *pCallbacks)
 {
-    auto pCtrl = new ETController(szButtonPath, szBgPath);
+    auto pCtrl = new ETController(szButtonPath, szBgPath, pCallbacks);
     if (pCtrl && pCtrl->init())
     {
         pCtrl->autorelease();
@@ -114,7 +117,7 @@ void ETController::onTMoved(const std::vector<Touch *> &pTouches, cocos2d::Event
     }
     else
     {
-        pButtonPoint = pButtonPoint * (m_fRadius / sqrt(fLen));
+        pButtonPoint = pButtonPoint * (m_fRadius * ETMath::InvSqrt(fLen));
         m_pCtrlButton->setPosition(pButtonPoint);
     }
     
@@ -127,27 +130,68 @@ void ETController::onTEnded(const std::vector<Touch *> &pTouches, cocos2d::Event
     m_pCtrlButton->runAction(
         EaseBackInOut::create( MoveTo::create(0.2f, Point::ZERO) )
     );
+    
+    changeStatus();
+}
+
+ETController::ETCtrlDir ETController::updateCurStatus()
+{
+    if (m_status == ETCtrlStatus::CTRLWAIT) return ETCtrlDir::CENTER;
+        
+    auto pValue = atan(m_pCtrlButton->getPositionY() / m_pCtrlButton->getPositionX()) + 3.1415926 * 5 / 8;
+    
+    auto iValue = (int)(pValue / 3.1415926 * 4);
+    auto bIsLeft = m_pCtrlButton->getPositionX() < 0 ? true : false;
+    
+    CCLOG("%d", iValue);
+    
+    /* the up to down order */
+    /* the right order is 4 ~ 0 */
+    /* the left order is 0 ~ 4 */
+    if (bIsLeft)
+    {
+        iValue = 4 - iValue;
+    }
+    
+    switch (iValue)
+    {
+        /* up */
+        case 4: return ETCtrlDir::UP; break;
+        case 3: return bIsLeft ? ETCtrlDir::LEFTUP : ETCtrlDir::RIGHTUP; break;
+        case 2: return bIsLeft ? ETCtrlDir::LEFT : ETCtrlDir::RIGHT; break;
+        case 1: return bIsLeft ? ETCtrlDir::LEFTDOWN : ETCtrlDir::RIGHTDOWN; break;
+        /* down */
+        case 0: return ETCtrlDir::DOWN; break;
+    }
+    
+    return ETCtrlDir::CENTER;
 }
 
 void ETController::changeStatus()
 {
-    auto pValue = atan(m_pCtrlButton->getPositionY() / m_pCtrlButton->getPositionX()) + 3.1415926 / 16;
+    auto curStatus = updateCurStatus();
     
-    if (m_pCtrlButton->getPositionX() < 0)
-    {
-        
-    }
-    else
-    {
-        
-    }
+    if (m_dir == curStatus) { return ; }
     
-    CCLOG("%f", pValue / 3.1415926 * 180 / 22.5);
-    CCLOG("%d", (int)(pValue / 3.1415926 * 8));
+    m_dir = curStatus;
+    
+    if (m_pCallbacks == nullptr) return ;
+    
+    switch (m_dir)
+    {
+        case ETController::UP:          m_pCallbacks->pUpCall(); break;
+        case ETController::LEFTUP:      m_pCallbacks->pLeftUpCall(); break;
+        case ETController::LEFT:        m_pCallbacks->pLeftCall(); break;
+        case ETController::LEFTDOWN:    m_pCallbacks->pLeftDownCall(); break;
+        case ETController::DOWN:        m_pCallbacks->pDownCall(); break;
+        case ETController::RIGHTDOWN:   m_pCallbacks->pRightDownCall(); break;
+        case ETController::RIGHT:       m_pCallbacks->pRightCall(); break;
+        case ETController::RIGHTUP:     m_pCallbacks->pRightUpCall(); break;
+        case ETController::CENTER:      m_pCallbacks->pCenterCall(); break;
+    }
 }
 
 #ifdef ETDEBUG
-
 void ETController::draw(cocos2d::Renderer *renderer, const kmMat4 &transform, bool transformUpdated)
 {
     _customCommand.init(_globalZOrder);
@@ -160,7 +204,6 @@ void ETController::onDraw(const kmMat4 &transform, bool transformUpdated)
     kmGLPushMatrix();
     kmGLLoadMatrix(&transform);
     
-    //draw
     CHECK_GL_ERROR_DEBUG();
     
     glLineWidth( 5.0f );
@@ -170,3 +213,14 @@ void ETController::onDraw(const kmMat4 &transform, bool transformUpdated)
     kmGLPopMatrix();
 }
 #endif
+
+void ETController::bindCtrlTarget(ETCtrlInterface *pCallback)
+{
+    /* need release before controled object? */
+    if (m_pCallbacks)
+    {
+        CC_SAFE_DELETE(m_pCallbacks);
+    }
+    
+    m_pCallbacks = pCallback;
+}

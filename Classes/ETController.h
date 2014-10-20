@@ -12,9 +12,27 @@
 #include "ETCommon.h"
 
 //typedef ccMenuCallback ETControlCallback;
-typedef std::function<void()> ETControlCallback;
+//typedef std::function<void()> ETControlCallback;
 
 #define ETDEBUG (true)
+
+class ETController;
+
+class ETCtrlInterface
+{
+protected:
+    virtual void pUpCall()           { CCLOG("CTRL : UP"); }
+    virtual void pLeftUpCall()       { CCLOG("CTRL : LEFT UP"); }
+    virtual void pLeftCall()         { CCLOG("CTRL : LEFT"); }
+    virtual void pLeftDownCall()     { CCLOG("CTRL : LEFT DOWN"); }
+    virtual void pDownCall()         { CCLOG("CTRL : DOWN"); }
+    virtual void pRightDownCall()    { CCLOG("CTRL : RIGHT DOWN"); }
+    virtual void pRightCall()        { CCLOG("CTRL : RIGHT"); }
+    virtual void pRightUpCall()      { CCLOG("CTRL : RIGHT UP"); }
+    virtual void pCenterCall()       { CCLOG("CTRL : CENTER"); }
+    
+    friend class ETController;
+};
 
 class ETController : public Node
 {
@@ -25,15 +43,26 @@ public:
         CTRLTOUCH,
     };
     
+    enum ETCtrlDir
+    {
+        CENTER = 0,
+        UP,
+        LEFTUP,
+        LEFT,
+        LEFTDOWN,
+        DOWN,
+        RIGHTDOWN,
+        RIGHT,
+        RIGHTUP
+    };
+    
 public:
-    ETController(std::string szButtonPath, std::string szBgPath);
-    static ETController* create(std::string szButtonPath, std::string szBgPath);
+    ETController(std::string szButtonPath, std::string szBgPath, ETCtrlInterface *pCallback);
+    static ETController* create(std::string szButtonPath, std::string szBgPath,
+                                ETCtrlInterface *pCallbacks = new ETCtrlInterface());
     
     bool init();
-    
-    
     virtual void onEnter();
-    
     
     void setRadius(float radius)
     {
@@ -43,18 +72,20 @@ public:
     float getRadius() { return m_fRadius; }
     
 #ifdef ETDEBUG
+    /* bebug */
     void draw(Renderer *renderer, const kmMat4 &transform, bool transformUpdated);
-    
 protected:
     void onDraw(const kmMat4 &transform, bool transformUpdated);
     CustomCommand _customCommand;
 #endif
     
-protected:
+    void bindCtrlTarget(ETCtrlInterface *pCallback);
     
+protected:
     void initBg();
     void initButton();
     
+    ETCtrlDir updateCurStatus();
     void changeStatus();
     
     void onTBegan(const std::vector<Touch*> &pTouches, Event *pE);
@@ -62,15 +93,7 @@ protected:
     void onTEnded(const std::vector<Touch*> &pTouches, Event *pE);
     void onTCanceled(const std::vector<Touch*> &pTouches, Event *pE);
     
-    ETControlCallback pUpCall;
-    ETControlCallback pDownCall;
-    ETControlCallback pLeftCall;
-    ETControlCallback pRightCall;
-    
-    ETControlCallback pLeftUpCall;
-    ETControlCallback pLeftDownCall;
-    ETControlCallback pRightUpCall;
-    ETControlCallback pRightDownCall;
+    ETCtrlInterface *m_pCallbacks;
 
 private:
     float m_fRadius;
@@ -82,9 +105,7 @@ private:
     Sprite *m_pCtrlButton;
     
     ETCtrlStatus m_status;
-    
-    int m_iAngle;
-    
+    ETCtrlDir m_dir;
 };
 
 #endif

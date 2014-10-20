@@ -123,6 +123,8 @@
 		E871F03419F2A218001D694B /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03119F2A218001D694B /* MainScene.cpp */; };
 		E871F03A19F2A50D001D694B /* ETController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETController.cpp */; };
 		E871F03B19F2A50D001D694B /* ETController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETController.cpp */; };
+		E877C35219F528F400557F6D /* ETOldMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E877C35019F528F400557F6D /* ETOldMan.cpp */; };
+		E877C35319F528F400557F6D /* ETOldMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E877C35019F528F400557F6D /* ETOldMan.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -352,6 +354,8 @@
 		E871F03919F2A50D001D694B /* ETController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETController.h; path = ../Classes/ETController.h; sourceTree = "<group>"; };
 		E871F03C19F2A743001D694B /* ETCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCommon.h; path = ../Classes/ETCommon.h; sourceTree = "<group>"; };
 		E871F03D19F2A76A001D694B /* ETResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETResource.h; sourceTree = "<group>"; };
+		E877C35019F528F400557F6D /* ETOldMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ETOldMan.cpp; path = ../Classes/ETOldMan.cpp; sourceTree = "<group>"; };
+		E877C35119F528F400557F6D /* ETOldMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETOldMan.h; path = ../Classes/ETOldMan.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +435,8 @@
 				E871F03D19F2A76A001D694B /* ETResource.h */,
 				E871F03119F2A218001D694B /* MainScene.cpp */,
 				E871F03219F2A218001D694B /* MainScene.h */,
+				E877C35019F528F400557F6D /* ETOldMan.cpp */,
+				E877C35119F528F400557F6D /* ETOldMan.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -834,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E871F02D19F2A1DE001D694B /* ETMutiMenu.cpp in Sources */,
+				E877C35219F528F400557F6D /* ETOldMan.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
@@ -852,6 +859,7 @@
 				E871F03419F2A218001D694B /* MainScene.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				E877C35319F528F400557F6D /* ETOldMan.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
