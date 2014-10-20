@@ -12,7 +12,7 @@
 const static char *szBg = "HelloWorld.png";
 
 const static char *szImgControllerBoard = "CloseNormal.png";
-const static char *szImgControllerRoll = "CloseSelected.png";
+const static char *szImgControllerButton = "CloseSelected.png";
 
 const static char *szImgCloseN = "CloseNormal.png";
 const static char *szImgCloseS = "CloseSeleted.png";

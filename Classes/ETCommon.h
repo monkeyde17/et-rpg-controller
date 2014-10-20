@@ -112,6 +112,20 @@ public:
         return __String::createWithFormat("%4d-%02d-%02d", timeinfo->tm_year + 1900, timeinfo->tm_mon + 1, timeinfo->tm_mday);
     }
 };
+
+class ETMath
+{
+public:
+    static float InvSqrt(float x)
+    {
+        float xhalf = 0.5f * x;
+        int i = *(int *)&x;
+        i = 0x5f375a86 - (i >> 1);
+        x = *(float *)&i;
+        x = x * (1.5f - xhalf * x *x);
+        return x;
+    }
+};
 /******ET Common End******/
 
 #endif

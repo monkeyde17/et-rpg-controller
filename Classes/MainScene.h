@@ -10,6 +10,7 @@
 #define __MAIN_SCENE__
 
 #include "ETCommon.h"
+#include "ETController.h"
 
 class MainScene : public Scene
 {

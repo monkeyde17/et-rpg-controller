@@ -121,8 +121,8 @@
 		E871F02E19F2A1DE001D694B /* ETMutiMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F02B19F2A1DE001D694B /* ETMutiMenu.cpp */; };
 		E871F03319F2A218001D694B /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03119F2A218001D694B /* MainScene.cpp */; };
 		E871F03419F2A218001D694B /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03119F2A218001D694B /* MainScene.cpp */; };
-		E871F03A19F2A50D001D694B /* ETControllerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETControllerLayer.cpp */; };
-		E871F03B19F2A50D001D694B /* ETControllerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETControllerLayer.cpp */; };
+		E871F03A19F2A50D001D694B /* ETController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETController.cpp */; };
+		E871F03B19F2A50D001D694B /* ETController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,8 +348,8 @@
 		E871F02C19F2A1DE001D694B /* ETMutiMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETMutiMenu.h; path = ../Classes/ETMutiMenu.h; sourceTree = "<group>"; };
 		E871F03119F2A218001D694B /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
 		E871F03219F2A218001D694B /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = ../Classes/MainScene.h; sourceTree = "<group>"; };
-		E871F03819F2A50D001D694B /* ETControllerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ETControllerLayer.cpp; path = ../Classes/ETControllerLayer.cpp; sourceTree = "<group>"; };
-		E871F03919F2A50D001D694B /* ETControllerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETControllerLayer.h; path = ../Classes/ETControllerLayer.h; sourceTree = "<group>"; };
+		E871F03819F2A50D001D694B /* ETController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ETController.cpp; path = ../Classes/ETController.cpp; sourceTree = "<group>"; };
+		E871F03919F2A50D001D694B /* ETController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETController.h; path = ../Classes/ETController.h; sourceTree = "<group>"; };
 		E871F03C19F2A743001D694B /* ETCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETCommon.h; path = ../Classes/ETCommon.h; sourceTree = "<group>"; };
 		E871F03D19F2A76A001D694B /* ETResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETResource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,8 +424,8 @@
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				E871F03C19F2A743001D694B /* ETCommon.h */,
-				E871F03819F2A50D001D694B /* ETControllerLayer.cpp */,
-				E871F03919F2A50D001D694B /* ETControllerLayer.h */,
+				E871F03819F2A50D001D694B /* ETController.cpp */,
+				E871F03919F2A50D001D694B /* ETController.h */,
 				E871F02B19F2A1DE001D694B /* ETMutiMenu.cpp */,
 				E871F02C19F2A1DE001D694B /* ETMutiMenu.h */,
 				E871F03D19F2A76A001D694B /* ETResource.h */,
@@ -837,7 +837,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
-				E871F03A19F2A50D001D694B /* ETControllerLayer.cpp in Sources */,
+				E871F03A19F2A50D001D694B /* ETController.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				E871F03319F2A218001D694B /* MainScene.cpp in Sources */,
 			);
@@ -847,7 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E871F03B19F2A50D001D694B /* ETControllerLayer.cpp in Sources */,
+				E871F03B19F2A50D001D694B /* ETController.cpp in Sources */,
 				E871F02E19F2A1DE001D694B /* ETMutiMenu.cpp in Sources */,
 				E871F03419F2A218001D694B /* MainScene.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
