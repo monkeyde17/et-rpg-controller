@@ -45,11 +45,17 @@ void MainScene::initBg()
 
 void MainScene::initController()
 {
-    /* TODO */
-    auto pController = ETController::create(szImgControllerButton, "");
+    
+    auto pOldMan = ETOldMan::create();
+    pOldMan->setPosition(ETPOS(DWIDTH / 2, DHEIGHT / 2));
+    addChild(pOldMan);
+    
+    auto pController = ETController::create(szImgControllerButton, "", pOldMan);
     auto s = pController->getContentSize();
     pController->setPosition(ETPOS(s.width * 2, DHEIGHT / 2));
     addChild(pController);
+    
+    
     
 }
 

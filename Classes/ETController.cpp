@@ -94,10 +94,12 @@ void ETController::onTBegan(const std::vector<Touch *> &pTouches, cocos2d::Event
     
     auto pButtonPoint = pPoint - getPosition();
     auto fLen = pButtonPoint.x * pButtonPoint.x + pButtonPoint.y * pButtonPoint.y;
+    auto fRadius = m_fRadius * m_fRadius;
     
-    if (fLen < m_fRadius * m_fRadius)
+    if (fLen < fRadius)
     {
         m_pCtrlButton->setPosition(pPoint - getPosition());
+        
         m_status = ETCtrlStatus::CTRLTOUCH;
     }
 }
@@ -110,8 +112,10 @@ void ETController::onTMoved(const std::vector<Touch *> &pTouches, cocos2d::Event
     auto pButtonPoint = pPoint - getPosition();
     
     auto fLen = pButtonPoint.x * pButtonPoint.x + pButtonPoint.y * pButtonPoint.y;
+    auto fRadius = m_fRadius * m_fRadius;
     
-    if (fLen < m_fRadius * m_fRadius)
+    
+    if (fLen < fRadius)
     {
         m_pCtrlButton->setPosition(pButtonPoint);
     }
@@ -143,7 +147,7 @@ ETController::ETCtrlDir ETController::updateCurStatus()
     auto iValue = (int)(pValue / 3.1415926 * 4);
     auto bIsLeft = m_pCtrlButton->getPositionX() < 0 ? true : false;
     
-    CCLOG("%d", iValue);
+    // CCLOG("%d", iValue);
     
     /* the up to down order */
     /* the right order is 4 ~ 0 */
@@ -207,8 +211,10 @@ void ETController::onDraw(const kmMat4 &transform, bool transformUpdated)
     CHECK_GL_ERROR_DEBUG();
     
     glLineWidth( 5.0f );
-    DrawPrimitives::setDrawColor4B(255,0,0,255);
-    DrawPrimitives::drawCircle(Point::ZERO, m_fRadius, 0 * 3.1415926 / 16, 16, true);
+    DrawPrimitives::setDrawColor4B(255, 0, 0, 255);
+    DrawPrimitives::drawCircle(Point::ZERO, m_fRadius, 0 * 3.1415926 / 16, 16, false);
+    
+    DrawPrimitives::drawCircle(Point::ZERO, m_fRadius / 2, 0 * 3.1415926 / 16, 16, false);
     
     kmGLPopMatrix();
 }

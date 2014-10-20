@@ -20,7 +20,7 @@ class ETController;
 
 class ETCtrlInterface
 {
-protected:
+public:
     virtual void pUpCall()           { CCLOG("CTRL : UP"); }
     virtual void pLeftUpCall()       { CCLOG("CTRL : LEFT UP"); }
     virtual void pLeftCall()         { CCLOG("CTRL : LEFT"); }
@@ -30,8 +30,6 @@ protected:
     virtual void pRightCall()        { CCLOG("CTRL : RIGHT"); }
     virtual void pRightUpCall()      { CCLOG("CTRL : RIGHT UP"); }
     virtual void pCenterCall()       { CCLOG("CTRL : CENTER"); }
-    
-    friend class ETController;
 };
 
 class ETController : public Node

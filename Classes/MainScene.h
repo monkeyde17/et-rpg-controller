@@ -11,6 +11,7 @@
 
 #include "ETCommon.h"
 #include "ETController.h"
+#include "ETOldMan.h"
 
 class MainScene : public Scene
 {
