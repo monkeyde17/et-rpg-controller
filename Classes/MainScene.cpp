@@ -63,6 +63,10 @@ void MainScene::initMenu()
     
     auto s = pClose->getContentSize();
     pClose->setPosition(ETPOS(DWIDTH - s.width, s.height / 2));
-    
-    
+    m_pMenuLayer->addChild(pClose);
+}
+
+void MainScene::closeCallback(cocos2d::Ref *pSender)
+{
+    Director::getInstance()->end();
 }

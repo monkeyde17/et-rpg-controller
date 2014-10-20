@@ -219,3 +219,7 @@ pip-log.txt
 proj.win32/
 proj.wp8-xaml/
 proj.linux/
+
+proj.ios_mac/RPGController.xcodeproj/project.xcworkspace/
+proj.ios_mac/RPGController.xcodeproj/xcuserdata/
+

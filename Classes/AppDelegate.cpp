@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "ETCommon.h"
-#include "ETLoadingScene.h"
+#include "MainScene.h"
 
 USING_NS_CC;
 
@@ -39,6 +39,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 
     /* start the main scene */
+    auto pScene = MainScene::create();
+    director->runWithScene(pScene);
     
 
     return true;
