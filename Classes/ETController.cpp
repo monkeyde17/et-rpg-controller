@@ -125,7 +125,10 @@ void ETController::onTMoved(const std::vector<Touch *> &pTouches, cocos2d::Event
         m_pCtrlButton->setPosition(pButtonPoint);
     }
     
+    /* make the valid range during the small circle and big circle */
+    if (fLen < fRadius / 4) m_status = ETCtrlStatus::CTRLWAIT;
     changeStatus();
+    m_status = ETCtrlStatus::CTRLTOUCH;
 }
 
 void ETController::onTEnded(const std::vector<Touch *> &pTouches, cocos2d::Event *pE)
