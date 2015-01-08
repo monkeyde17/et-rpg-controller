@@ -125,6 +125,13 @@
 		E871F03B19F2A50D001D694B /* ETController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E871F03819F2A50D001D694B /* ETController.cpp */; };
 		E877C35219F528F400557F6D /* ETOldMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E877C35019F528F400557F6D /* ETOldMan.cpp */; };
 		E877C35319F528F400557F6D /* ETOldMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E877C35019F528F400557F6D /* ETOldMan.cpp */; };
+		E8A4B1571A5E209E00E0B613 /* libcurl_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1501A5E209E00E0B613 /* libcurl_arm64.a */; };
+		E8A4B1581A5E209E00E0B613 /* libfreetype_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1511A5E209E00E0B613 /* libfreetype_arm64.a */; };
+		E8A4B1591A5E209E00E0B613 /* libjpeg_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1521A5E209E00E0B613 /* libjpeg_arm64.a */; };
+		E8A4B15A1A5E209E00E0B613 /* libpng_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1531A5E209E00E0B613 /* libpng_arm64.a */; };
+		E8A4B15B1A5E209E00E0B613 /* libtiff_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1541A5E209E00E0B613 /* libtiff_arm64.a */; };
+		E8A4B15C1A5E209E00E0B613 /* libwebp_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1551A5E209E00E0B613 /* libwebp_arm64.a */; };
+		E8A4B15D1A5E209E00E0B613 /* libwebsockets_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A4B1561A5E209E00E0B613 /* libwebsockets_arm64.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +363,13 @@
 		E871F03D19F2A76A001D694B /* ETResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETResource.h; sourceTree = "<group>"; };
 		E877C35019F528F400557F6D /* ETOldMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ETOldMan.cpp; path = ../Classes/ETOldMan.cpp; sourceTree = "<group>"; };
 		E877C35119F528F400557F6D /* ETOldMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETOldMan.h; path = ../Classes/ETOldMan.h; sourceTree = "<group>"; };
+		E8A4B1501A5E209E00E0B613 /* libcurl_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl_arm64.a; path = ../cocos2d/external/curl/prebuilt/ios/libcurl_arm64.a; sourceTree = "<group>"; };
+		E8A4B1511A5E209E00E0B613 /* libfreetype_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreetype_arm64.a; path = ../cocos2d/external/freetype2/prebuilt/ios/libfreetype_arm64.a; sourceTree = "<group>"; };
+		E8A4B1521A5E209E00E0B613 /* libjpeg_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg_arm64.a; path = ../cocos2d/external/jpeg/prebuilt/ios/libjpeg_arm64.a; sourceTree = "<group>"; };
+		E8A4B1531A5E209E00E0B613 /* libpng_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng_arm64.a; path = ../cocos2d/external/png/prebuilt/ios/libpng_arm64.a; sourceTree = "<group>"; };
+		E8A4B1541A5E209E00E0B613 /* libtiff_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff_arm64.a; path = ../cocos2d/external/tiff/prebuilt/ios/libtiff_arm64.a; sourceTree = "<group>"; };
+		E8A4B1551A5E209E00E0B613 /* libwebp_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwebp_arm64.a; path = ../cocos2d/external/webp/prebuilt/ios/libwebp_arm64.a; sourceTree = "<group>"; };
+		E8A4B1561A5E209E00E0B613 /* libwebsockets_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwebsockets_arm64.a; path = ../cocos2d/external/websockets/prebuilt/ios/libwebsockets_arm64.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +383,13 @@
 				1AC6FB31180E99EB004C840B /* libcocos2dx-extensions iOS.a in Frameworks */,
 				1AC6FB32180E99EB004C840B /* libCocosDenshion iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
+				E8A4B1571A5E209E00E0B613 /* libcurl_arm64.a in Frameworks */,
+				E8A4B1581A5E209E00E0B613 /* libfreetype_arm64.a in Frameworks */,
+				E8A4B1591A5E209E00E0B613 /* libjpeg_arm64.a in Frameworks */,
+				E8A4B15A1A5E209E00E0B613 /* libpng_arm64.a in Frameworks */,
+				E8A4B15B1A5E209E00E0B613 /* libtiff_arm64.a in Frameworks */,
+				E8A4B15C1A5E209E00E0B613 /* libwebp_arm64.a in Frameworks */,
+				E8A4B15D1A5E209E00E0B613 /* libwebsockets_arm64.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -485,6 +506,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8A4B1501A5E209E00E0B613 /* libcurl_arm64.a */,
+				E8A4B1511A5E209E00E0B613 /* libfreetype_arm64.a */,
+				E8A4B1521A5E209E00E0B613 /* libjpeg_arm64.a */,
+				E8A4B1531A5E209E00E0B613 /* libpng_arm64.a */,
+				E8A4B1541A5E209E00E0B613 /* libtiff_arm64.a */,
+				E8A4B1551A5E209E00E0B613 /* libwebp_arm64.a */,
+				E8A4B1561A5E209E00E0B613 /* libwebsockets_arm64.a */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
 				503AE11A17EB9C5A00D1A890 /* IOKit.framework */,
 				503AE11117EB99EE00D1A890 /* libcurl.dylib */,
@@ -641,7 +669,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = YZS43ZVZ7N;
 					};
 				};
 			};
@@ -943,7 +971,15 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/curl/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/freetype2/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/jpeg/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/png/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/tiff/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/webp/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/websockets/prebuilt/ios",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -972,7 +1008,15 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/curl/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/freetype2/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/jpeg/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/png/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/tiff/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/webp/prebuilt/ios",
+					"/Users/etond/Documents/github/et-rpg-controller/cocos2d/external/websockets/prebuilt/ios",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
